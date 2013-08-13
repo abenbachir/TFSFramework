@@ -2,21 +2,10 @@
 namespace TeamFoundation.Tests.Repositories
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using Microsoft.Data.Services.Toolkit.QueryModel;
-    using TeamFoundation.Common.ExpressionVisitors;
     using TeamFoundation.Common.Repositories;
     using TeamFoundation.Common.Proxies;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Moq;
-    using Microsoft.TeamFoundation.WorkItemTracking.Client;
-    using TeamFoundation.Common;
-    using System.Globalization;
-    using System.Net;
-    using Microsoft.TeamFoundation.Client;
     using System.Reflection;
-    using TeamFoundation.Common.Proxies;
     using TeamFoundation.Common.Helpers;
 
     [TestClass]
