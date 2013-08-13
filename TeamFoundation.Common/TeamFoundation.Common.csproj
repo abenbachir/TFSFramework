@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7FCAED7-5DC3-4727-AD30-F97D4AD4E1BC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Genetec.TeamFoundation.Common</RootNamespace>
+    <AssemblyName>Genetec.TeamFoundation.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.TeamFoundation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.Build.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.Build.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Entities\AreaPath.cs" />
+    <Compile Include="Entities\Attachment.cs" />
+    <Compile Include="Entities\Branch.cs" />
+    <Compile Include="Entities\Build.cs" />
+    <Compile Include="Entities\BuildDefinition.cs" />
+    <Compile Include="Entities\Change.cs" />
+    <Compile Include="Entities\Changeset.cs" />
+    <Compile Include="Entities\IterationPath.cs" />
+    <Compile Include="Entities\Link.cs" />
+    <Compile Include="Entities\Project.cs" />
+    <Compile Include="Entities\Query.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\WorkItem.cs" />
+    <Compile Include="Exceptions\ProxyNotFoundException.cs" />
+    <Compile Include="Helpers\AssemblyHelper.cs" />
+    <Compile Include="TFSManager.cs" />
+    <Compile Include="Exceptions\RepositoryNotFoundException.cs" />
+    <Compile Include="ExpressionVisitors\BuildFilterExpressionVisitor.cs" />
+    <Compile Include="ExpressionVisitors\ChangesetFilterExpressionVisitor.cs" />
+    <Compile Include="ExpressionVisitors\FilterNode.cs" />
+    <Compile Include="ExpressionVisitors\FilterNodeEnumerator.cs" />
+    <Compile Include="ExpressionVisitors\WorkItemFilterExpressionVisitor.cs" />
+    <Compile Include="Factories\RepositoryFactory.cs" />
+    <Compile Include="Factories\TfsConnectionFactory.cs" />
+    <Compile Include="Helpers\RegistryHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AreaPathRepository.cs" />
+    <Compile Include="Repositories\AttachmentRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\BranchRepository.cs" />
+    <Compile Include="Repositories\BuildDefinitionRepository.cs" />
+    <Compile Include="Repositories\BuildRepository.cs" />
+    <Compile Include="Repositories\ChangeRepository.cs" />
+    <Compile Include="Repositories\ChangesetRepository.cs" />
+    <Compile Include="Repositories\IterationPathRepository.cs" />
+    <Compile Include="Repositories\IWriteableRepository.cs" />
+    <Compile Include="Repositories\LinkRepository.cs" />
+    <Compile Include="Repositories\ProjectRepository.cs" />
+    <Compile Include="Repositories\QueryRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\WorkItemRepository.cs" />
+    <Compile Include="Translators\EntityTranslator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\ITFSAreaPathProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\ITFSAttachmentProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\ITFSBranchProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\ITFSBuildDefinitionProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\ITFSBuildProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\ITFSChangeProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\ITFSChangesetProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\ITFSIterationPathProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\ITFSLinkProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\ITFSProjectProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\ITFSQueryProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\ITFSUserProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\ITFSWorkItemProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\TFSAreaPathProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\TFSAttachmentProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\TFSBaseProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\TFSBranchProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\TFSBuildDefinitionProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\TFSBuildProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\TFSChangeProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\TFSChangesetProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\TFSIterationPathProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\TFSLinkProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\TFSProjectProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Factories\TFSProxyFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\TFSQueryProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\TFSUserProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxies\TFSWorkItemProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TFSService.cs" />
+    <Compile Include="Translators\AreaPathTranslator.cs" />
+    <Compile Include="Translators\AttachmentTranslator.cs" />
+    <Compile Include="Translators\BranchTranslator.cs" />
+    <Compile Include="Translators\BuildTranslator.cs" />
+    <Compile Include="Translators\BuildDefinitionTranslator.cs" />
+    <Compile Include="Translators\ChangesetTranslator.cs" />
+    <Compile Include="Translators\ChangeTranslator.cs" />
+    <Compile Include="Translators\IterationPathTranslator.cs" />
+    <Compile Include="Translators\LinkTranslator.cs" />
+    <Compile Include="Translators\ProjectTranslator.cs" />
+    <Compile Include="Translators\QueryTranslator.cs" />
+    <Compile Include="Translators\UserIdentityTranslator.cs" />
+    <Compile Include="Translators\WorkItemTranslator.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
